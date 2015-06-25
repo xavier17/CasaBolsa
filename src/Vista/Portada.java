@@ -5,11 +5,12 @@
  */
 package Vista;
 
-
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 /**
  *
@@ -24,8 +25,17 @@ public class Portada extends javax.swing.JFrame {
         initComponents();
         this.setSize(800, 1024);
         this.setExtendedState(this.MAXIMIZED_BOTH);
-        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Favicon.png"));
         this.setIconImage(icon);
+    }
+    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Favicon.png"));
+
+    public void VerjDialog(JFrame ventana, int with, int heigt) {
+        //ventana.setModal(true);
+        ventana.setSize(with, heigt);
+        ventana.setLocationRelativeTo(null);
+        ventana.setResizable(false);
+        ventana.setVisible(true);
+        ventana.setIconImage(icon);
     }
 
     /**
@@ -50,11 +60,14 @@ public class Portada extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("FAIS CASA DE BOLSA SA");
 
         jMenuBar1.setBackground(new java.awt.Color(247, 247, 247));
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menuUser.png"))); // NOI18N
         jMenu1.setText("Parametros");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
         jMenuItem1.setText("Sucursales");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,24 +77,36 @@ public class Portada extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
         jMenu1.add(jSeparator1);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menuUser.png"))); // NOI18N
         jMenuItem2.setText("Clase de Clientes");
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(157, 20));
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu2.png"))); // NOI18N
         jMenuItem3.setText("Localidad");
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
         jMenuItem4.setText("Giradurias");
         jMenu1.add(jMenuItem4);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
         jMenuItem5.setText("Ficha de Cliente");
         jMenu1.add(jMenuItem5);
         jMenu1.add(jSeparator2);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu2.png"))); // NOI18N
         jMenuItem6.setText("Cuentas de Ahorro");
         jMenu1.add(jMenuItem6);
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menuEdit.png"))); // NOI18N
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
@@ -103,10 +128,17 @@ public class Portada extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-////        Sucursales su = new Sucursales();
+        Template tem = new Template();
+        VerjDialog(tem, 1068, 700);
 //        su.setVisible(true);
 //        this.setEnabled(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Template2 temp = new Template2();
+        VerjDialog(temp, 610, 460);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,18 +158,19 @@ public class Portada extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                   UIManager.put ( "MenuBar", Color.GREEN);
+                    UIManager.put("FormattedTextField.background", new ColorUIResource(255, 255, 255));
+                    UIManager.put("control", new ColorUIResource(247, 247, 247));//fondo
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Portada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Portada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Portada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Portada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>

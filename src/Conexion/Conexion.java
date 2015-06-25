@@ -23,7 +23,7 @@ public class Conexion {
             ClassNotFoundException {
         String driverName = "com.mysql.jdbc.Driver";
         //String url = "jdbc:mysql://www.5diasti.com:3306/diastico_5dias";
-        String url = "jdbc:mysql://localhost/5dias";
+        String url = "jdbc:mysql://localhost/broker2015";
         String username = usuario;
         String pasword = contraseña;
         boolean ban = true;

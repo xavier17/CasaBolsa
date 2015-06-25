@@ -61,7 +61,7 @@ public class Login extends javax.swing.JFrame {
         setTitle("Login");
 
         jTextField1.setText("User");
-        jTextField1.setSelectionColor(new java.awt.Color(0, 165, 137));
+        jTextField1.setSelectionColor(new java.awt.Color(0, 63, 62));
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
@@ -79,7 +79,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jPasswordField1.setText("Pssssss");
-        jPasswordField1.setSelectionColor(new java.awt.Color(0, 165, 137));
+        jPasswordField1.setSelectionColor(new java.awt.Color(0, 63, 62));
         jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordField1FocusGained(evt);
